@@ -1,4 +1,5 @@
 cub3D Invalid Maps Tester
+
 Test your 42 School cub3D's parsing against a list of invalid maps
 
 
