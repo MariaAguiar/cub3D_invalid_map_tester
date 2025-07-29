@@ -1,27 +1,39 @@
 cub3D Invalid Maps Tester
 
-Test your 42 School cub3D's parsing against a list of invalid maps
+
+Automated tester to validate map parsing logic for the 42 School cub3D project, a raycasting 3D engine. This script checks your project’s handling of invalid maps and helps detect parsing errors and memory leaks early.
 
 
-Prerequisites:
+✅ Features
 
-- Your executable is named cub3D, as requested per the project's subject
-- If you use the valgrind option, make sure your executable is compiled without -fsanitize statements
+- Runs a suite of invalid map files against your cub3D executable.
+
+- Validates that no window is opened during execution (ensuring proper error handling).
+
+- Optional Valgrind mode to check for memory leaks.
+
+- Lightweight Bash script, easy to integrate into your workflow.
 
 
-Instructions:
+🔍 Prerequisites
 
-- Place the contents of this repository next to your cub3D executable
-- Run: chmod 777 ./tester.sh; ./tester.sh [valgrind]
+- Your executable must be named cub3D (per project requirements).
+
+- For Valgrind mode, compile without -fsanitize flags.
 
 
-Evaluating the results:
+🚀 Usage
 
-- Your program must not open a window during the whole execution of the ./tester.sh command listed above
-  If it does, it is opening an invalid map, which can result in erroneous behaviour later on.
-- You can use the valgrind rule to check for leaks during execution of the ./tester.sh command listed above
-  Compilation of -fsanitize statements without this rule can further help in this regard
-- At the time of writing, this program has not been tested against final cub3D projects.
-  Please, see this program as an auxiliar program and not as a means of final testing.
+1. Place the contents of this repository next to your cub3D executable.
 
-Thank you!
+2. Access the repo and run:
+   chmod 777 ./tester.sh; ./tester.sh [valgrind]
+
+
+📌 Evaluating Results
+
+- Your program must not open a window during the entire run of ./tester.sh.
+
+- If a window appears, your parser is accepting invalid maps, which may cause undefined behavior later.
+
+- Use the valgrind argument to detect leaks. Compiling with -fsanitize flags (outside Valgrind mode) can help catch further issues.
